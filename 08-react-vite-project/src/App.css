@@ -1,0 +1,49 @@
+.app{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    display: flex;
+    padding: 1em;
+    background-color: #21222A;
+    color:white;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    color: rgb(97, 219, 251);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.logoImage{
+    width: 30px;
+    margin-right: 5px;
+}
+
+.content{
+    flex: 1;
+    padding: 2em;
+    color: white;
+    background-color: #282D35;
+    overflow: auto;
+    background-image: url('reactjs-icon2.png');
+    background-repeat: no-repeat;
+    background-position: right 25%;
+    background-size: 250px;
+}
+
+.contentList{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.contentList>li{
+    margin-block: 1em;
+}
+.contentList>li::marker{
+    font-size: 1.2em;
+    color: rgb(97, 219, 251);
+}
