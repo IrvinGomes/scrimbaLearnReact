@@ -49,3 +49,25 @@ The [Learn React](https://scrimba.com/learn/learnreact) course on Scrimba is a c
 
    ```bash
    git clone https://github.com/your-username/scrimba-react-course.git
+   ```
+
+## Running the Projects
+
+For projects 1 through 5, you can navigate to each project's folder open the `index.html` and open using **[Live Server](https://github.com/ritwickdey/vscode-live-server-plus-plus)** <img src="https://raw.githubusercontent.com/ritwickdey/vscode-live-server-plus-plus/master/images/vscode-live-server-plus-plus.png" width="30px">
+
+#### After project 5
+
+Starting from Project 6, all projects use Vite as the build tool. Before running each project, make sure to install the required dependencies. 
+#### Navigate to the project folder:
+
+```bash
+cd project-folder
+```
+#### Install dependencies:
+```bash
+npm install
+```
+#### Run the project:
+```bash
+npm run dev
+```
