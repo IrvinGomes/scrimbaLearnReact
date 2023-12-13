@@ -1,7 +1,8 @@
 import { iContact } from "../interfaces/iContact";
 
-export function Contact(contact:iContact) {
-  const {name, phone, email}= contact;
+interface ContactProps extends iContact { };
+
+const Contact: React.FC<ContactProps> = ({ name, phone, email }) => {
   return (
     <div className="contact-card">
       <img src="vite.svg" />
