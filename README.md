@@ -9,37 +9,40 @@ The [Learn React](https://scrimba.com/learn/learnreact) course on Scrimba is a c
 ## Projects
 
 1. **Project 1: React with CDN**
-   - Brief description of the project and the React concepts covered
+    - Brief description of the project and the React concepts covered
 
 2. **Project 2: React Append (CDN)**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 3. **Project 3: React Project 1 (CDN)**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 4. **Project 4: React Components (CDN)**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 5. **Project 5: React Components 2 (CDN)**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 6. **Project 6: React Components Files (package.json)**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 7. **Project 7: React Vite**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 8. **Project 8: React Vite Project**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 9. **Project 9: React Solo Project - Profile Card (Vite)**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
 
 10. **Project 10: React Airbnb Copy (Vite)**
-   - Brief description of the project and the React concepts covered.
+    - Brief description of the project and the React concepts covered.
+
+11. **Project 11: React Components with Props (Vite)**
+    - Brief description of the project and the React concepts covered.
    <!--
-   - [Live Demo](link-to-live-demo)
-   - [Code](link-to-project-code)
+    - [Live Demo](link-to-live-demo)
+    - [Code](link-to-project-code)
    -->
    <!-- Add more projects as needed -->
 
