@@ -37,8 +37,12 @@ section{
     justify-items: center;
 }
 .card{
-    width: 180px;
+    width: 175px;
     font-size: 12px;
+    flex: 0 0 auto;         
+    display: flex;          
+    flex-direction: column; 
+    position: relative;
 }
 .cardImage{
     width: 100%;
@@ -51,4 +55,13 @@ section{
 }
 .cardStar{
     height: 14px;
+}
+.card-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background-color: white;
+    padding: 5px 7px;
+    border-radius: 2px;
+    font-weight: bold;
 }

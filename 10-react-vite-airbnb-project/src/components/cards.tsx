@@ -4,19 +4,22 @@ export function Cards(){
 
 	const cards = [
 		{
-			stats:{stars:5, qtd:10, ctr: 'USA'},
+			stats:{stars:5, qtd:10, ctr: 'online'},
 			description: "Test",
-			price: 105.00
+			price: 105.00,
+			openSpots: 4
 		},
         {
 			stats:{stars:3, qtd:7, ctr: 'USA'},
 			description: "Test 2",
-			price: 150.00
+			price: 150,
+			openSpots: 0
 		},
         {
 			stats:{stars:1, qtd:20, ctr: 'USA'},
 			description: "Test 3",
-			price: 1000.00
+			price: 1000.00,
+			openSpots: 3
 		}
 	]
 
