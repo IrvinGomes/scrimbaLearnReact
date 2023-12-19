@@ -1,0 +1,31 @@
+html body {
+    margin: 0;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: lightblue;
+    padding: 20px;
+}
+
+.header-image {
+    height: 100%;
+    margin-right: 6px;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    margin-right: auto;
+}
+
+.header-project {
+    font-size: 1rem;
+    font-weight: 500;
+}
