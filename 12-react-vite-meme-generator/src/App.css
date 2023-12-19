@@ -5,14 +5,16 @@ html body {
 #root {
     width: 100vw;
     height: 100vh;
+    background-color: whitesmoke;
 }
 
 .header {
     display: flex;
     align-items: center;
     height: 65px;
-    background: lightblue;
+    background: white;
     padding: 20px;
+    border-bottom: 1px lightgrey solid;
 }
 
 .header-image {
