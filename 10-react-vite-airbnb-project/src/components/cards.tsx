@@ -1,4 +1,5 @@
 import Card from "./card";
+import data from "../../public/data.js"
 
 export function Cards(){
 
@@ -25,9 +26,9 @@ export function Cards(){
 
 	const cardCollection = ()=>{
 
-		return cards.map((card:unknown, index:number)=>{
+		return data.map((card:any, index:number)=>{
 			return (
-				<Card card={card} key={index}/>
+				<Card {...card} key={index}/>
 			)
 		})
 	}
