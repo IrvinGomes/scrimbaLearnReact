@@ -6,6 +6,7 @@ html body {
     width: 100vw;
     height: 100vh;
     background-color: whitesmoke;
+    overflow: auto;
 }
 
 .header {
@@ -30,4 +31,65 @@ html body {
 .header-project {
     font-size: 1rem;
     font-weight: 500;
+}
+/**/
+main{
+    padding: 30px;
+}
+/**/
+.form{
+    display: grid;
+    grid-template: 40px 40px / 1fr 1fr;
+    gap: 15px;
+}
+.form-input{
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    text-indent: 5px;
+}
+.form-button{
+    grid-column: 1 / -1;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    background: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: large;
+}
+.form-button:hover{
+    background-color: lightgray;
+    color: white;
+}
+.form-button:active{
+    background-color: gray;
+}
+/**/
+.memeImage{
+    padding: 30px 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    span{
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: xx-large;
+        font-weight: bold;
+        width: 100%;
+        max-width: 550px;
+        overflow-wrap: break-word;
+        background-color: white;
+        border-radius: 5px;
+    }
+}
+.memeImage-img{
+    width: 100%;
+    max-width: 600px;
+}
+.memeImage-text1{
+    position: absolute;
+    top: 50px;
+}
+.memeImage-text2{
+    position: absolute;
+    bottom: 20px;
 }
