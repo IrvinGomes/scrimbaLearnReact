@@ -9,7 +9,7 @@ const Meme:React.FC<any> = ({})=>{
     const [memeImage, setMemeImage] = useState({})
 
     const changeImage = ()=>{
-        const random = Math.floor(Math.random()*100)
+        const random = Math.floor(Math.random()*memeData.data.memes.length)
         setMemeImage(memeData.data.memes[random])
     }
 
