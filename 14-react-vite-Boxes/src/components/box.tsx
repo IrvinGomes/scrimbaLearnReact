@@ -1,6 +1,6 @@
 const Box:React.FC<any> = ({on, handleBoxClick})=>{
     return (
-        <div onClick={handleBoxClick} className={`box${on?" box-true":""}`}></div>
+        <button onClick={handleBoxClick} className={`box${on?" box-true":""}`}></button>
     )
 }
 
