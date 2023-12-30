@@ -16,7 +16,7 @@ function App() {
 
   const boxesComponent = () => {
     return boxes.map((box: any) => {
-      return <Box key={box.id} {...box} handleBoxClick={handleBoxClick} />;
+      return <Box key={box.id} on={box.on} handleBoxClick={()=>handleBoxClick(box.id)} />;
     });
   };
 
