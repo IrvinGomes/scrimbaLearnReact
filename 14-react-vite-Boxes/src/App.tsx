@@ -8,11 +8,9 @@ function App() {
 
   const handleBoxClick = (id:number) => {
     setBoxes((preValue: any)=>{
-      const newValue:any = []
-      preValue.map((value:any)=>{
-        value.id!==id?newValue.push({...value}):newValue.push({...value, on:!value.on})
+      return preValue.map((box:any)=>{
+        return box.id === id? {...box, on:!box.on}:box
       })
-      return newValue
     })
   };
 
