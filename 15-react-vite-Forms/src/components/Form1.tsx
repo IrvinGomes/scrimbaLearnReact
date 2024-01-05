@@ -5,6 +5,7 @@ const Form1: React.FC<any> = ({}) => {
     firstName: "",
     lastName: "",
     email: "",
+    comments: ""
   });
 
   console.log(formData);
@@ -45,6 +46,14 @@ const Form1: React.FC<any> = ({}) => {
         placeholder="e-Mail@something.com"
         onChange={handleChange}
         value={formData.email}
+      />
+      <textarea
+        name="comments"
+        id="comments"
+        className="form-input"
+        placeholder="Comments"
+        onChange={handleChange}
+        value={formData.comments}
       />
     </form>
   );
