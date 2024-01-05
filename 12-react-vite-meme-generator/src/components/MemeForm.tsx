@@ -1,17 +1,25 @@
-import memeData from "../../public/memesData.js";
+import { useEffect, useState } from "react";
 
 const MemeForm: React.FC<any> = ({ setMeme, meme }) => {
 
+	const [memeData, setMemeData] = useState([])
+
 	const handleSubmit = (event: any) => {
 		event.preventDefault();
-		const n=Math.floor(Math.random() * memeData.data.memes.length);
-		setMeme((prevValue:any)=>({...prevValue, imageUrl:memeData.data.memes[n].url}))
+		const n=Math.floor(Math.random() * memeData.length);
+		setMeme((prevValue:any)=>({...prevValue, imageUrl:memeData[n].url}))
 	};
 
 	const handleChange = (event:any)=>{
 		const {name, value} = event.target;
 		setMeme((prevValue:any)=>({...prevValue, [name]:value}))
 	}
+
+	useEffect(()=>{
+		fetch("https://api.imgflip.com/get_memes")
+			.then(res=>res.json())
+			.then(data => setMemeData(data.data.memes))
+	},[])
 
 	return (
 		<form onSubmit={handleSubmit} className="form">
