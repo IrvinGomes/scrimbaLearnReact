@@ -13,11 +13,14 @@ function App() {
 	},[count])
 	// dependency array - contain values that if they change will cause the effect to run
   // if the array is empty, it will cause the effect to run only once(when the page loads)
+
 	return (
-		<div>
-			<pre>{JSON.stringify(starWarsData, null, 2)}</pre>
-			<h3>the count {count}</h3>
-			<button onClick={()=>setCount(prevCount=>prevCount+1)}>add</button>
+		<div className='app'>
+      {starWarsData.name && <div className='app wrapper'>
+        <h3>StartWars Character</h3>
+        <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+        <button onClick={()=>setCount(prevCount=>prevCount+1)}>Get Next Character</button>
+      </div>}
 		</div>
 	)
 }
