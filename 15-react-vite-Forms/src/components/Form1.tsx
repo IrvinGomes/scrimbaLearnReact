@@ -1,16 +1,16 @@
 import { useState } from "react";
 
 const Form1: React.FC<any> = ({}) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [formData, setFormData] = useState({ firstName: "", lastName: "" });
 
-  console.log(firstName, lastName)
+  console.log(formData);
 
-  const handleChangeFirst = (event: any) => {
-    setFirstName(event.target.value)
-  };
-  const handleChangeLast = (event: any) => {
-    setLastName(event.target.value)
+  const handleChange = (event: any) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      //ES6 - computed properties [variable] as propertie name
+      [event.target.name]: event.target.value,
+    }));
   };
 
   return (
@@ -21,15 +21,15 @@ const Form1: React.FC<any> = ({}) => {
         id="firstName"
         className="form-input"
         placeholder="First Name"
-        onChange={handleChangeFirst}
+        onChange={handleChange}
       />
       <input
         type="text"
-        name="lasttName"
-        id="lasttName"
+        name="lastName"
+        id="lastName"
         className="form-input"
         placeholder="Last Name"
-        onChange={handleChangeLast}
+        onChange={handleChange}
       />
     </form>
   );
