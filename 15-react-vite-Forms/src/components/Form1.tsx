@@ -25,10 +25,10 @@ const Form1: React.FC<any> = ({}) => {
       />
       <input
         type="text"
-        name="firstName"
-        id="firstName"
+        name="lasttName"
+        id="lasttName"
         className="form-input"
-        placeholder="First Name"
+        placeholder="Last Name"
         onChange={handleChangeLast}
       />
     </form>
