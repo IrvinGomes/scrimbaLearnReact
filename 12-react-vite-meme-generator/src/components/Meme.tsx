@@ -2,7 +2,7 @@ import { useState } from "react";
 import MemeForm from "./MemeForm";
 import MemeImage from "./MemeImage";
 
-const Meme:React.FC<any> = ({})=>{
+const Meme:React.FC<any> = ()=>{
 
     const [meme, setMeme] = useState({
         topText:"",
@@ -12,7 +12,7 @@ const Meme:React.FC<any> = ({})=>{
 
     return (
         <main>
-            <MemeForm setMeme={setMeme}/>
+            <MemeForm setMeme={setMeme} meme={meme}/>
             <MemeImage meme={meme}/>
         </main>
     )

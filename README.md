@@ -50,8 +50,11 @@ The [Learn React](https://scrimba.com/learn/learnreact) course on Scrimba is a c
 14. **Project 14: React Boxes (Vite)**
     - Brief description of the project and the React concepts covered.
 
-15. **Project 13: React Forms (Vite)**
-    - Brief description of the project and the React concepts covered.    
+15. **Project 15: React Forms (Vite)**
+    - Brief description of the project and the React concepts covered.  
+
+16. **Project 16: React useEffect (Vite)**
+- Brief description of the project and the React concepts covered.    
    <!--
     - [Live Demo](link-to-live-demo)
     - [Code](link-to-project-code)
