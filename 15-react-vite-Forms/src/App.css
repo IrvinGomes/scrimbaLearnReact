@@ -1,10 +1,13 @@
 .formWrapper{
     padding: 1em;
 }
-.form{
+.form, 
+.form-input-fieldset{
     display: grid;
 }
-.form-input{
+.form-input, 
+.form-input-fieldset, 
+.form-input-checkbox{
     border-radius: 5px;
     border: 1px solid darkgray;
     padding: 10px;
@@ -13,7 +16,4 @@
 .form-input:focus{
     outline: none;
     border: 1px solid black;
-}
-.form-input-checkbox{
-    margin: 5px -4px;
 }

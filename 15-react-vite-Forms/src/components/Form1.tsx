@@ -7,7 +7,10 @@ const Form1: React.FC<any> = ({}) => {
     email: "email@email.com",
     comments: "My Comments",
     isFriendly: true,
+    employment: "full-time"
   });
+
+  console.log(formData.employment)
 
   const handleChange = (event: any) => {
     const { name, value, type, checked } = event.target;
@@ -63,8 +66,44 @@ const Form1: React.FC<any> = ({}) => {
           checked={formData.isFriendly}
           onChange={handleChange}
         />
-        <label htmlFor="isFriendly">Are you friendly?</label>
+        <label htmlFor="isFriendly">Are you friendly? {!formData.isFriendly && "I can't believe you are a bad person :("}</label>
       </div>
+      <fieldset className="form-input-fieldset">
+        <legend>Current employment status</legend>
+        <div>
+          <input 
+            type="radio" 
+            name="employment" 
+            id="unemployed" 
+            value="unemployed" 
+            onChange={handleChange} 
+            checked={formData.employment==="unemployed"}
+          />
+          <label htmlFor="unemployed">Unemployed</label>
+        </div>
+        <div>
+          <input 
+            type="radio" 
+            name="employment" 
+            id="part-time" 
+            value="part-time" 
+            onChange={handleChange} 
+            checked={formData.employment==="part-time"}
+          />
+          <label htmlFor="part-time">Part-time</label>
+        </div>
+        <div>
+          <input 
+            type="radio" 
+            name="employment" 
+            id="full-time" 
+            value="full-time" 
+            onChange={handleChange} 
+            checked={formData.employment==="full-time"}
+          />
+          <label htmlFor="full-time">Full-time</label>
+        </div>
+      </fieldset>
     </form>
   );
 };
