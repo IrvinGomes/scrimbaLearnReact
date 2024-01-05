@@ -2,19 +2,19 @@ import { useState } from "react";
 
 const Form1: React.FC<any> = ({}) => {
   const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    comments: ""
+    firstName: "FirstName",
+    lastName: "LastName",
+    email: "email@email.com",
+    comments: "My Comments",
+    isFriendly: true,
   });
 
-  console.log(formData);
-
   const handleChange = (event: any) => {
+    const { name, value, type, checked } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
       //ES6 - computed properties [variable] as propertie name
-      [event.target.name]: event.target.value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
@@ -55,6 +55,16 @@ const Form1: React.FC<any> = ({}) => {
         onChange={handleChange}
         value={formData.comments}
       />
+      <div className="form-input-checkbox">
+        <input
+          type="checkbox"
+          name="isFriendly"
+          id="isFriendly"
+          checked={formData.isFriendly}
+          onChange={handleChange}
+        />
+        <label htmlFor="isFriendly">Are you friendly?</label>
+      </div>
     </form>
   );
 };

@@ -14,3 +14,6 @@
     outline: none;
     border: 1px solid black;
 }
+.form-input-checkbox{
+    margin: 5px -4px;
+}
