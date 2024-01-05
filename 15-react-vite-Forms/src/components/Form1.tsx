@@ -7,10 +7,11 @@ const Form1: React.FC<any> = ({}) => {
     email: "email@email.com",
     comments: "My Comments",
     isFriendly: true,
-    employment: "full-time"
+    employment: "full-time",
+    favColor:""
   });
 
-  console.log(formData.employment)
+  console.log(formData.favColor)
 
   const handleChange = (event: any) => {
     const { name, value, type, checked } = event.target;
@@ -104,6 +105,16 @@ const Form1: React.FC<any> = ({}) => {
           <label htmlFor="full-time">Full-time</label>
         </div>
       </fieldset>
+      <select name="favColor" id="favColor" className="form-input-select" value={formData.favColor} onChange={handleChange}>
+        <option value="">-- Choose --</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+        <option value="indigo">Indigo</option>
+        <option value="violet">Violet</option>
+      </select>
     </form>
   );
 };
