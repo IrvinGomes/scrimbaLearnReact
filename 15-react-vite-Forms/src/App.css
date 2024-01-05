@@ -1,0 +1,16 @@
+.formWrapper{
+    padding: 1em;
+}
+.form{
+    display: grid;
+}
+.form-input{
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    padding: 10px;
+    margin: 5px 0;
+}
+.form-input:focus{
+    outline: none;
+    border: 1px solid black;
+}
