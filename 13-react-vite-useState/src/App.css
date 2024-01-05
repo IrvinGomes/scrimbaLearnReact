@@ -1,0 +1,40 @@
+.countComponent{
+  display: flex;
+  align-items: flex-end;
+  font-size: 1.5rem;
+}
+
+.countComponent-text{
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #262626;
+}
+
+button{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background-color: #737373;
+  color: #D9D9D9;
+  font-size: 1.5rem;
+}
+button:hover{
+  background-color: #404040;
+  color: #D9D9D9;
+}
+
+.countComponent-btn-plus{
+  margin-left: -20px;
+}
+
+.countComponent-btn-minus{
+  margin-right: -20px;
+  z-index: 1;
+}

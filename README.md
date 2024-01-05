@@ -40,6 +40,12 @@ The [Learn React](https://scrimba.com/learn/learnreact) course on Scrimba is a c
 
 11. **Project 11: React Components with Props (Vite)**
     - Brief description of the project and the React concepts covered.
+
+12. **Project 12: React project Meme Generator (Vite)**
+    - Brief description of the project and the React concepts covered.
+
+13. **Project 13: React useState (Vite)**
+    - Brief description of the project and the React concepts covered.
    <!--
     - [Live Demo](link-to-live-demo)
     - [Code](link-to-project-code)
