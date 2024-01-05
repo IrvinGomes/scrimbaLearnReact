@@ -77,8 +77,18 @@ main{
         width: 100%;
         max-width: 550px;
         overflow-wrap: break-word;
-        background-color: white;
-        border-radius: 5px;
+        color: white;
+        text-transform: uppercase;
+        text-shadow:
+            2px 2px 0 #000,
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            0 2px 0 #000,
+            2px 0 0 #000,
+            0 -2px 0 #000,
+            -2px 0 0 #000,
+            2px 2px 5px #000;
     }
 }
 .memeImage-img{

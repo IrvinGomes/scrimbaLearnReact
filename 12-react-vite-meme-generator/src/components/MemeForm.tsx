@@ -1,35 +1,27 @@
 import memeData from "../../public/memesData.js";
 
-const MemeForm: React.FC<any> = ({ setMeme }) => {
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    setMeme({
-      topText: event.target.text1.value,
-      bottonText: event.target.text2.value,
-      imageUrl:
-        memeData.data.memes[
-          Math.floor(Math.random() * memeData.data.memes.length)
-        ].url,
-    });
-  };
+const MemeForm: React.FC<any> = ({ setMeme, meme }) => {
 
-  const changeTopText = (event:any)=>{
-    setMeme((prevMeme:any)=>({...prevMeme, topText:event.target.value}))
-  }
+	const handleSubmit = (event: any) => {
+		event.preventDefault();
+		const n=Math.floor(Math.random() * memeData.data.memes.length);
+		setMeme((prevValue:any)=>({...prevValue, imageUrl:memeData.data.memes[n].url}))
+	};
 
-  const changeBottonText = (event:any)=>{
-    setMeme((prevMeme:any)=>({...prevMeme, bottonText:event.target.value}))
-  }
+	const handleChange = (event:any)=>{
+		const {name, value} = event.target;
+		setMeme((prevValue:any)=>({...prevValue, [name]:value}))
+	}
 
-  return (
-    <form onSubmit={handleSubmit} className="form">
-      <input type="text" name="text1" id="text1" className="form-input" onChange={changeTopText}/>
-      <input type="text" name="text2" id="text2" className="form-input" onChange={changeBottonText}/>
-      <button type="submit" className="form-button">
-        Get a new meme image 🖼
-      </button>
-    </form>
-  );
+	return (
+		<form onSubmit={handleSubmit} className="form">
+			<input type="text" name="topText" id="topText" value={meme.topText} className="form-input" onChange={handleChange}/>
+			<input type="text" name="bottonText" id="bottonText" value={meme.bottonText} className="form-input" onChange={handleChange}/>
+			<button type="submit" className="form-button">
+				Get a new meme image 🖼
+			</button>
+		</form>
+	);
 };
 
 export default MemeForm;
