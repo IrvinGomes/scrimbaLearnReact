@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 
-const Form1: React.FC<any> = ({}) => {
+const Form1: React.FC<any> = () => {
 	const [formData, setFormData] = useState({
 		firstName: "",
 		lastName: "",
@@ -10,6 +10,8 @@ const Form1: React.FC<any> = ({}) => {
 		employment: "full-time",
 		favColor:""
 	});
+
+  const id = useId()
 
 	const handleChange = (event: any) => {
 		const { name, value, type, checked } = event.target;
@@ -27,41 +29,41 @@ const Form1: React.FC<any> = ({}) => {
 
 	return (
 		<form className="form" onSubmit={handleSubmit}>
-			<input
+			<label htmlFor={id+"firstName"}>First Name</label>
+      <input
 				type="text"
 				name="firstName"
-				id="firstName"
+				id={id+"firstName"}
 				className="form-input"
-				placeholder="First Name"
 				onChange={handleChange}
 				value={formData.firstName}
         required
 			/>
-			<input
+			<label htmlFor={id+"lastName"}>Last Name</label>
+      <input
 				type="text"
 				name="lastName"
-				id="lastName"
+				id={id+"lastName"}
 				className="form-input"
-				placeholder="Last Name"
 				onChange={handleChange}
 				value={formData.lastName}
         required
 			/>
-			<input
+			<label htmlFor={id+"email"}>e-Mail</label>
+      <input
 				type="email"
 				name="email"
-				id="email"
+				id={id+"email"}
 				className="form-input"
-				placeholder="e-Mail@something.com"
 				onChange={handleChange}
 				value={formData.email}
         required
 			/>
+      <label htmlFor={id+"comments"}>Comments</label>
 			<textarea
 				name="comments"
-				id="comments"
+				id={id+"comments"}
 				className="form-input"
-				placeholder="Comments"
 				onChange={handleChange}
 				value={formData.comments}
         required
@@ -70,12 +72,11 @@ const Form1: React.FC<any> = ({}) => {
 				<input
 					type="checkbox"
 					name="isFriendly"
-					id="isFriendly"
+					id={id+"isFriendly"}
 					checked={formData.isFriendly}
 					onChange={handleChange}
-          required
 				/>
-				<label htmlFor="isFriendly">Are you friendly? {!formData.isFriendly && "I can't believe you are a bad person :("}</label>
+				<label htmlFor={id+"isFriendly"}>Are you friendly? {!formData.isFriendly && "I can't believe you are a bad person :("}</label>
 			</div>
 			<fieldset className="form-input-fieldset">
 				<legend>Current employment status</legend>
@@ -83,39 +84,40 @@ const Form1: React.FC<any> = ({}) => {
 					<input 
 						type="radio" 
 						name="employment" 
-						id="unemployed" 
+						id={id+"unemployed" }
 						value="unemployed" 
 						onChange={handleChange} 
 						checked={formData.employment==="unemployed"}
 					/>
-					<label htmlFor="unemployed">Unemployed</label>
+					<label htmlFor={id+"unemployed"}>Unemployed</label>
 				</div>
 				<div>
 					<input 
 						type="radio" 
 						name="employment" 
-						id="part-time" 
+						id={id+"part-time" }
 						value="part-time" 
 						onChange={handleChange} 
 						checked={formData.employment==="part-time"}
 					/>
-					<label htmlFor="part-time">Part-time</label>
+					<label htmlFor={id+"part-time"}>Part-time</label>
 				</div>
 				<div>
 					<input 
 						type="radio" 
 						name="employment" 
-						id="full-time" 
+						id={id+"full-time" }
 						value="full-time" 
 						onChange={handleChange} 
 						checked={formData.employment==="full-time"}
 					/>
-					<label htmlFor="full-time">Full-time</label>
+					<label htmlFor={id+"full-time"}>Full-time</label>
 				</div>
 			</fieldset>
+      <label htmlFor={id+"favColor"}>Favorite Color</label>
 			<select 
         name="favColor" 
-        id="favColor" 
+        id={id+"favColor" }
         className="form-input-select" 
         value={formData.favColor} 
         onChange={handleChange}

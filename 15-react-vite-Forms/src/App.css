@@ -19,3 +19,11 @@
     outline: none;
     border: 1px solid black;
 }
+.form-input:user-invalid,
+.form-input-select:user-invalid{
+    border: 1px solid red;
+}
+.form-input:user-valid,
+.form-input-select:user-valid{
+    border: 1px solid green;
+}
