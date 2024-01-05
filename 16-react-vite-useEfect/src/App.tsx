@@ -6,17 +6,13 @@ function App() {
 	const [starWarsData, setStarWarsData] = useState({})
 	const [count, setCount] = useState(1)
 
-	console.log('render outside')
-
   useEffect(()=>{
-    console.log('render inside')
-
     fetch(`https://swapi.dev/api/people/${count}`)
       .then(res => res.json())
       .then(data => setStarWarsData(data))
 	},[count])
-	//dependency array - contain values that if they change will cause the effect to run
-
+	// dependency array - contain values that if they change will cause the effect to run
+  // if the array is empty, it will cause the effect to run only once(when the page loads)
 	return (
 		<div>
 			<pre>{JSON.stringify(starWarsData, null, 2)}</pre>
