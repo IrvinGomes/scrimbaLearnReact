@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const Form1: React.FC<any> = ({}) => {
-  const [formData, setFormData] = useState({ firstName: "", lastName: "" });
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
 
   console.log(formData);
 
@@ -22,6 +26,7 @@ const Form1: React.FC<any> = ({}) => {
         className="form-input"
         placeholder="First Name"
         onChange={handleChange}
+        value={formData.firstName}
       />
       <input
         type="text"
@@ -30,6 +35,16 @@ const Form1: React.FC<any> = ({}) => {
         className="form-input"
         placeholder="Last Name"
         onChange={handleChange}
+        value={formData.lastName}
+      />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        className="form-input"
+        placeholder="e-Mail@something.com"
+        onChange={handleChange}
+        value={formData.email}
       />
     </form>
   );
