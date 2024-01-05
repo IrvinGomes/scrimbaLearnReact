@@ -1,0 +1,51 @@
+.formWrapper, 
+.formWrapper-signup{
+    padding: 1em;
+}
+.form, 
+.form-input-fieldset{
+    display: grid;
+}
+.form-input, 
+.form-input-fieldset, 
+.form-input-checkbox,
+.form-input-select,
+.form-input-button {
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    padding: 10px;
+    margin: 5px 0;
+}
+.form-input:focus{
+    outline: none;
+    border: 1px solid black;
+}
+.form-input:user-invalid,
+.form-input-select:user-invalid{
+    border: 1px solid red;
+}
+.form-input:user-valid,
+.form-input-select:user-valid{
+    border: 1px solid green;
+}
+/*
+signup form
+*/
+.formWrapper-signup{
+    display: grid;
+    justify-content: center;
+}
+.signupWrapper{
+    width: 500px;
+    padding: 2em;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+    box-shadow: 0px 0px 5px ;
+}
+
+.input-error-label{
+    color: red;
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: small;
+}
