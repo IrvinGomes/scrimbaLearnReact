@@ -8,7 +8,8 @@
 .form-input, 
 .form-input-fieldset, 
 .form-input-checkbox,
-.form-input-select{
+.form-input-select,
+.form-input-button {
     border-radius: 5px;
     border: 1px solid darkgray;
     padding: 10px;
