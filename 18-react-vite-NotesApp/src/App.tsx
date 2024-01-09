@@ -13,7 +13,7 @@ function App() {
   };
 
   const saveNotesOnLocalStorage: any = () => {
-    localStorage.setItem('notes', JSON.stringify(notes))
+    localStorage.setItem("notes", JSON.stringify(notes));
   };
 
   const [notes, setNotes] = useState<any>(getNotesFromLocalStorage() || []);
@@ -21,9 +21,9 @@ function App() {
     (notes[0] && notes[0].id) || ""
   );
 
-  useEffect(()=>{
-    saveNotesOnLocalStorage()
-  },[notes])
+  useEffect(() => {
+    saveNotesOnLocalStorage();
+  }, [notes]);
 
   function createNewNote() {
     const newNote = {
@@ -35,12 +35,20 @@ function App() {
   }
 
   function updateNote(text: any) {
-    setNotes((oldNotes: any) =>
-      oldNotes.map((oldNote: any) => {
-        return oldNote.id === currentNoteId
-          ? { ...oldNote, body: text }
-          : oldNote;
-      })
+    setNotes(
+      (oldNotes: any) => {
+        const newArray = [];
+        for (let i = 0; i < oldNotes.length; i++) {
+          const oldNote= oldNotes[i];
+          if(oldNote.id === currentNoteId){
+            newArray.unshift({ ...oldNote, body: text })
+          }
+          else{
+            newArray.push(oldNote)
+          }
+        }
+        return newArray;
+      }
     );
   }
 
