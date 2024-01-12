@@ -3,11 +3,11 @@ const Sidebar: React.FC<any> = ({
   currentNote,
   newNote,
   setCurrentNoteId,
+  deleteNote,
 }) => {
-
-  const getNoteName = (note:any)=>{
-    return note.body.split('\n')[0].replace(/[^a-zA-Z0-9 ]/g,"")
-  }
+  const getNoteName = (note: any) => {
+    return note.body.split("\n")[0].replace(/[^a-zA-Z0-9 ]/g, "");
+  };
 
   const noteElements = notes.map((note: any, index: any) => (
     <div key={note.id}>
@@ -16,6 +16,12 @@ const Sidebar: React.FC<any> = ({
         onClick={() => setCurrentNoteId(note.id)}
       >
         <h4 className="text-snippet">{getNoteName(note)}</h4>
+        <button
+          className="delete-btn"
+          onClick={(event: any) => deleteNote(event, note.id)}
+        >
+          <i className="trash-icon gg-trash"></i>
+        </button>
       </div>
     </div>
   ));

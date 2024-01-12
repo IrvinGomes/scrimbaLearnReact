@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Editor from "./components/Editor";
-import { data } from "../public/data.js";
+// import { data } from "../public/data.js";
 import "./App.css";
 import Split from "react-split";
 import { nanoid } from "nanoid";
@@ -35,20 +35,24 @@ function App() {
   }
 
   function updateNote(text: any) {
-    setNotes(
-      (oldNotes: any) => {
-        const newArray = [];
-        for (let i = 0; i < oldNotes.length; i++) {
-          const oldNote= oldNotes[i];
-          if(oldNote.id === currentNoteId){
-            newArray.unshift({ ...oldNote, body: text })
-          }
-          else{
-            newArray.push(oldNote)
-          }
+    setNotes((oldNotes: any) => {
+      const newArray = [];
+      for (let i = 0; i < oldNotes.length; i++) {
+        const oldNote = oldNotes[i];
+        if (oldNote.id === currentNoteId) {
+          newArray.unshift({ ...oldNote, body: text });
+        } else {
+          newArray.push(oldNote);
         }
-        return newArray;
       }
+      return newArray;
+    });
+  }
+
+  function deleteNote(event: any, noteId: string) {
+    event.stopPropagation();
+    setNotes((oldNotes: any) =>
+      oldNotes.filter((note: any) => note.id !== noteId)
     );
   }
 
@@ -69,6 +73,7 @@ function App() {
             currentNote={findCurrentNote()}
             setCurrentNoteId={setCurrentNoteId}
             newNote={createNewNote}
+            deleteNote={deleteNote}
           />
           {currentNoteId && notes.length > 0 && (
             <Editor currentNote={findCurrentNote()} updateNote={updateNote} />
