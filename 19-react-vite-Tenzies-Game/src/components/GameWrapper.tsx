@@ -6,10 +6,9 @@ interface iDie {
   selected: boolean;
 }
 
-const GameWrapper: React.FC<any> = () => {
+const GameWrapper: React.FC<any> = ({ tenzies, setTenzies }) => {
   const [diceArray, setDiceArray] = useState<iDie[]>([]);
   const [rolls, setRolls] = useState(0);
-  const [tenzies, setTenzies] = useState(false);
 
   const getRandom = () => {
     return Math.ceil(Math.random() * 6);
@@ -25,8 +24,20 @@ const GameWrapper: React.FC<any> = () => {
 
   const rollDices = () => {
     const allSelected = diceArray.every((die) => die.selected);
-    if (!allSelected) {
-      setRolls((oldRolls) => (oldRolls = oldRolls + 1));
+    if (!tenzies) {
+      if (!allSelected) {
+        setRolls((oldRolls) => (oldRolls = oldRolls + 1));
+      }
+    } else {
+      setTenzies(false);
+      setRolls(0);
+      setDiceArray(() => {
+        const newArr = [];
+        for (let i = 0; i < 10; i++) {
+          newArr.push({ value: getRandom(), selected: false });
+        }
+        return newArr;
+      });
     }
   };
 
@@ -58,7 +69,7 @@ const GameWrapper: React.FC<any> = () => {
 
       if (allSelected && allSameValue) {
         setTenzies(true);
-        alert(`YOU WON WITh ${rolls} ROLLS!!!`);
+        // alert(`YOU WON WITH ${rolls} ROLLS!!!`);
       }
     }
   }, [diceArray]);
@@ -76,7 +87,7 @@ const GameWrapper: React.FC<any> = () => {
         ))}
       </div>
       <button className="gameWrapper-rollBtn" onClick={rollDices}>
-        <h4>Roll</h4>
+        <h4>{tenzies ? "New Game" : "Roll"}</h4>
       </button>
       <p style={{ fontSize: "0.7em" }}>Number of rolls:{rolls}</p>
     </div>
