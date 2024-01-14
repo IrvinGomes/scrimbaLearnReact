@@ -9,6 +9,7 @@ interface iDie {
 const GameWrapper: React.FC<any> = () => {
   const [diceArray, setDiceArray] = useState<iDie[]>([]);
   const [rolls, setRolls] = useState(0);
+  const [tenzies, setTenzies] = useState(false);
 
   const getRandom = () => {
     return Math.ceil(Math.random() * 6);
@@ -23,10 +24,8 @@ const GameWrapper: React.FC<any> = () => {
   };
 
   const rollDices = () => {
-    const notSelected = diceArray.filter((die) => {
-      return !die.selected;
-    });
-    if (notSelected.length) {
+    const allSelected = diceArray.every((die) => die.selected);
+    if (!allSelected) {
       setRolls((oldRolls) => (oldRolls = oldRolls + 1));
     }
   };
@@ -50,6 +49,19 @@ const GameWrapper: React.FC<any> = () => {
       return newArr;
     });
   }, [rolls]);
+
+  useEffect(() => {
+    if (diceArray.length) {
+      const allSelected = diceArray.every((die) => die.selected);
+      const firstValue = diceArray[0].value;
+      const allSameValue = diceArray.every((die) => die.value === firstValue);
+
+      if (allSelected && allSameValue) {
+        setTenzies(true);
+        alert(`YOU WON WITh ${rolls} ROLLS!!!`);
+      }
+    }
+  }, [diceArray]);
 
   return (
     <div className="gameWrapper">
