@@ -16,6 +16,14 @@ function App() {
         />
       )}
       <GameWrapper tenzies={tenzies} setTenzies={setTenzies} />
+      {tenzies && (
+        <ConfettiExplosion
+          force={1}
+          duration={3000}
+          particleCount={300}
+          width={1600}
+        />
+      )}
     </div>
   );
 }
