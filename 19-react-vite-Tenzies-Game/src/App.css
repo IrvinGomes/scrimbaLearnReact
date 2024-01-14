@@ -1,0 +1,74 @@
+.app {
+  background-color: #0B2434;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* -- Game Wrapper -- */
+
+.gameWrapper {
+  padding: 2em;
+  max-width: 75%;
+  border-radius: 0.5em;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.gameWrapper-dieBox {
+  border-radius: 0.5em;
+  display: grid;
+  padding: 1em;
+  grid-template-areas:
+    'die die die die die'
+    'die die die die die';
+  gap: 0.5em;
+}
+
+.gameWrapper-rollBtn {
+  padding: 0em 2em;
+  margin: 1em;
+  color: white;
+  background-color: #5035FF;
+  border-radius: 0.5em;
+  box-shadow: 0;
+  border: 0;
+}
+
+.gameWrapper-rollBtn:hover {
+  cursor: pointer;
+  background-color: rgba(94, 44, 187, 1);
+}
+
+/* -- Game Die -- */
+
+.die {
+  grid-area: 'die';
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0.1em 0.2em gray;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: gray;
+    color: white;
+  }
+}
+
+.selected-die {
+  grid-area: 'die';
+  background-color: greenyellow;
+  border-radius: 0.5em;
+  box-shadow: 0 0.1em 0.2em gray;
+  text-align: center;
+
+  &:hover {
+    cursor: pointer;
+    background-color: green;
+    color: white;
+  }
+}
