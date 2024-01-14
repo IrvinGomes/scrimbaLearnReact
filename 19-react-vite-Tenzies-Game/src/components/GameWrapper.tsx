@@ -15,11 +15,13 @@ const GameWrapper: React.FC<any> = ({ tenzies, setTenzies }) => {
   };
 
   const toggleDie = (id: number) => {
-    setDiceArray((oldArr) => {
-      return oldArr.map((die, index) => {
-        return index === id ? { ...die, selected: !die.selected } : die;
+    if (!tenzies) {
+      setDiceArray((oldArr) => {
+        return oldArr.map((die, index) => {
+          return index === id ? { ...die, selected: !die.selected } : die;
+        });
       });
-    });
+    }
   };
 
   const rollDices = () => {
