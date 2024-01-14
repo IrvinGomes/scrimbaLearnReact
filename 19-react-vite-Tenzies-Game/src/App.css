@@ -61,7 +61,7 @@
 
 .selected-die {
   grid-area: 'die';
-  background-color: greenyellow;
+  background-color: #59E391;
   border-radius: 0.5em;
   box-shadow: 0 0.1em 0.2em gray;
   text-align: center;

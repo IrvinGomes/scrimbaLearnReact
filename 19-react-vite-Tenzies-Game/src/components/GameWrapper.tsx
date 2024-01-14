@@ -8,24 +8,48 @@ interface iDie {
 
 const GameWrapper: React.FC<any> = () => {
   const [diceArray, setDiceArray] = useState<iDie[]>([]);
+  const [rolls, setRolls] = useState(0);
 
   const getRandom = () => {
     return Math.ceil(Math.random() * 6);
   };
 
-  const selectDie = (index: number) => {
-    console.log(index);
+  const toggleDie = (id: number) => {
+    setDiceArray((oldArr) => {
+      return oldArr.map((die, index) => {
+        return index === id ? { ...die, selected: !die.selected } : die;
+      });
+    });
+  };
+
+  const rollDices = () => {
+    const notSelected = diceArray.filter((die) => {
+      return !die.selected;
+    });
+    if (notSelected.length) {
+      setRolls((oldRolls) => (oldRolls = oldRolls + 1));
+    }
   };
 
   useEffect(() => {
-    setDiceArray(() => {
-      const array = [];
-      for (let i = 0; i < 10; i++) {
-        array.push({ value: getRandom(), selected: true });
+    setDiceArray((oldArr) => {
+      const newArr = [];
+      if (!oldArr.length) {
+        for (let i = 0; i < 10; i++) {
+          newArr.push({ value: getRandom(), selected: false });
+        }
+      } else {
+        for (let i = 0; i < 10; i++) {
+          if (oldArr[i].selected) {
+            newArr.push(oldArr[i]);
+          } else {
+            newArr.push({ ...oldArr[i], value: getRandom() });
+          }
+        }
       }
-      return array;
+      return newArr;
     });
-  }, []);
+  }, [rolls]);
 
   return (
     <div className="gameWrapper">
@@ -36,12 +60,13 @@ const GameWrapper: React.FC<any> = () => {
       </p>
       <div className="gameWrapper-dieBox">
         {diceArray.map((die: iDie, index: number) => (
-          <Die die={die} key={index} selectDie={() => selectDie(index)} />
+          <Die die={die} key={index} toggleDie={() => toggleDie(index)} />
         ))}
       </div>
-      <button className="gameWrapper-rollBtn">
+      <button className="gameWrapper-rollBtn" onClick={rollDices}>
         <h4>Roll</h4>
       </button>
+      <p style={{ fontSize: "0.7em" }}>Number of rolls:{rolls}</p>
     </div>
   );
 };
