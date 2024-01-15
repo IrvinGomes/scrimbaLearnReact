@@ -60,14 +60,14 @@ The [Learn React](https://scrimba.com/learn/learnreact) course on Scrimba is a c
     - Brief description of the project and the React concepts covered. 
 
 18. **Project 17: React project Notes App (Vite)**
-- Brief description of the project and the React concepts covered.  
+    - Brief description of the project and the React concepts covered.  
 
 19. **Project 17: React project Tenzies Game (Vite)**
-- Brief description of the project and the React concepts covered.   
-   <!--
-    - [Live Demo](link-to-live-demo)
-    - [Code](link-to-project-code)
-   -->
+    - Brief description of the project and the React concepts covered.   
+   
+    - [Live Demo](https://tenziesgameproj.netlify.app/)
+    <!-- - [Code](link-to-project-code) -->
+  
    <!-- Add more projects as needed -->
 
 ## Getting Started
